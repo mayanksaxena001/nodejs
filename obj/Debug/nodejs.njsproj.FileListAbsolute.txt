@@ -1,0 +1,2 @@
+F:\Git\serverJs\NodeJs\bin\Microsoft.NodejsTools.WebRole.dll
+F:\Git\serverJs\NodeJs\obj\Debug\nodejs.njsprojResolveAssemblyReference.cache
