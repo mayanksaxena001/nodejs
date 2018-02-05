@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MY TODO APP</title>
+  <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+  <script type='text/javascript' src='/js/dashboard.js'>
+  </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+
+<body>
+  <h1>Welcome {{username}}!!</h1>
+  <p> Node and Express be with you.</p>
+  <div id='logout'>
+      <button type="submit" value="Logout" />
+  </div>
+  <div id="todo_form">
+    <form action="/api/todo" method="POST">
+      <input type="text" placeholder="Description" name="description">
+      <div id="combobox">
+        <select name="status">
+          <option value="incomplete">Incomplete</option>
+          <option value="complete">Complete</option>
+          <option value="pending">Pending</option>
+        </select>
+      </div>
+      <input type="date" placeholder="Last Date" name="last_date" >
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div>
+    <h2>Todo List</h2>
+  </div>
+  <div id="todo_table">
+    <table class="table">
+      <tr>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Last Date</th>
+        <th>Created Date</th>
+        <th>Last Updated</th>
+        <th>Delete</th>
+      </tr>
+      {{#each data}}
+      <tr>
+        <td>{{this.description}}</td>
+        <td>{{this.status}}</td>
+        <td>{{this.last_date}}</td>
+        <td>{{this.created_at}}</td>
+        <td>{{this.updated_at}}</td>
+        <td>
+            <form action="/api/todo/{{this.id}}" method="DELETE">
+              <input type="submit" name="delete" value="Delete" />
+            </form>
+          <!-- <input type="button" value="Delete" formmethod="DELETE" action="/api/todo/{{this.id}}"/> -->
+          <!-- <a href="/api/todo/{{this.id}}">delete</a> -->
+        </td>
+        {{/each}}
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>

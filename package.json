@@ -1,22 +1,40 @@
 {
-  "name": "nodejs-console-app1",
+  "name": "TodoApp",
   "version": "0.0.0",
-  "description": "NodejsConsoleApp1",
-  "main": "app.js",
+  "description": "Sample Node js Todo App",
+  "main": "server.js",
   "author": {
     "name": "Mayank_Saxena"
   },
   "devDependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "express": "4.14.0",
+    "morgan": "^1.8.1",
     "multer": "1.3.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.14.11"
   },
   "dependencies": {
-    "mongodb": "^2.2.26",
-    "mongoose": "^4.10.4"
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.1",
+    "dotenv": "^4.0.0",
+    "exphbs": "^1.1.0",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mongodb": "^2.2.34",
+    "mongoose": "4.7.4",
+    "mongoose-sequence": "^4.0.1",
+    "mysql2": "^1.5.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.32.2"
   },
   "scripts": {
-    "dev": "nodemon express_server.js"
+    "start": "nodemon server.js --exec babel-node --presets es2015",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

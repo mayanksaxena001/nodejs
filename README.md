@@ -1,3 +1,2 @@
-﻿# NodejsConsoleApp1
-
-
+﻿
+Node js ,Express ,Sequelize,Promise,Mysql
