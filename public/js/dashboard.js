@@ -8,7 +8,7 @@ $(function () {
                 console.log('success');
 
 // Sets the new location of the current window.
-window.location = "https://localhost:8081/login";
+window.location = "http://localhost:8081/login";
             }
         });
     });

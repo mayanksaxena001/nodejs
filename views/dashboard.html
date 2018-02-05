@@ -7,6 +7,7 @@
   <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
   <script type='text/javascript' src='/js/dashboard.js'>
   </script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/signup.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 
@@ -19,13 +20,11 @@
   <div id="todo_form">
     <form action="/api/todo" method="POST">
       <input type="text" placeholder="Description" name="description">
-      <div id="combobox">
         <select name="status">
           <option value="incomplete">Incomplete</option>
           <option value="complete">Complete</option>
           <option value="pending">Pending</option>
         </select>
-      </div>
       <input type="date" placeholder="Last Date" name="last_date" >
       <button type="submit">Submit</button>
     </form>
