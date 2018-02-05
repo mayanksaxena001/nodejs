@@ -5,7 +5,7 @@ export default class TodoRepository {
         return todo.find({ where: { id: id } }).then(t => t.update(data));
     };
     remove(id) {
-        return todo.delete({ where: { id: id } });
+        return todo.destroy({ where: { id: id } });
     };
     getById(id) {
         return todo.find({ where: { id: id } });
@@ -14,8 +14,8 @@ export default class TodoRepository {
         return todo.find();
     };
     create(data) {
-        if(!data.last_date){
-            data.last_date=new Date().now;
+        if (!data.last_date) {
+            data.last_date = new Date().now;
         }
         return todo.create(data);
     };
@@ -28,5 +28,16 @@ export default class TodoRepository {
                 user_id: id
             }
         })
+    }
+
+    findTodoByUserIdAndID(user_id, todo_id) {
+        if (user_id && todo_id) {
+            return todo.find({
+                where: {
+                    id: todo_id,
+                    user_id: user_id
+                }
+            });
+        }
     }
 }

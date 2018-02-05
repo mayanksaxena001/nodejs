@@ -17,3 +17,4 @@ router.route('/todo/:id')
     .get(todo.get_by_id_req)
     .put(todo.put_req)
     .delete(todo.del_req);
+router.route('/todo/user/:id').get(todo.delete_by_id);

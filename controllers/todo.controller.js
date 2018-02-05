@@ -24,7 +24,7 @@ export default class TodoController {
     }
     post_req(req, res) {
         const todo = req.body;
-        todo.user_id=req.user.id;
+        todo.user_id = req.user.id;
         repo.create(todo).then(() => { res.redirect('back'); })
             .catch((err) => { res.status(422).send(err); });
     }
@@ -45,6 +45,20 @@ export default class TodoController {
             return null;
         }
         return repo.getAllTodosForUser(user.id);
+    }
+
+    delete_by_id(req, res) {
+        const id = req.id;
+        const user_id = req.user.id;
+        if (!user_id) {
+            return res.redirect('/login');
+        }
+        repo.findTodoByUserIdAndID(user_id, id)
+            .then((data) => {
+                return repo.remove(data.id);
+            }).then(() => res.redirect('back'))
+            .catch((err) => {
+                 res.status(422).send(err); });
     }
 
 }

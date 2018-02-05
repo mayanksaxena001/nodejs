@@ -6,7 +6,7 @@ export default class UserRepository {
         return user.find({ where: { id: id } }).then(u => u.update(data));
     };
     remove(id) {
-        return user.delete({ where: { id: id } });
+        return user.destroy({ where: { id: id } });
     };
     getById(id) {
         return user.find({ where: { id: id } });

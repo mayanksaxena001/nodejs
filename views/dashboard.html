@@ -50,7 +50,7 @@
         <td>{{this.created_at}}</td>
         <td>{{this.updated_at}}</td>
         <td>
-            <form action="/api/todo/{{this.id}}" method="DELETE">
+            <form action="/api/todo/user/{{this.id}}" method="GET">
               <input type="submit" name="delete" value="Delete" />
             </form>
           <!-- <input type="button" value="Delete" formmethod="DELETE" action="/api/todo/{{this.id}}"/> -->
