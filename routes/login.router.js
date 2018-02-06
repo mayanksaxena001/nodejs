@@ -3,7 +3,7 @@ let login = new LoginController();
 // default gateways
 import express from 'express';
 export const router = express.Router();
-router.use('/', login.default_req);
+router.use('/', login.isLoggedIn,login.default_req);
 router.param('username', login.validation_req);
 
 router.route('/')

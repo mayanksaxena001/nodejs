@@ -2,27 +2,33 @@
 <html>
 
 <head>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>MY TODO APP</title>
+  <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+  <script type='text/javascript' src='/js/login.js'>
+  </script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="login-container">
-        <div class="login-header">
-          <h1 title="login">Login</h1>
+  <div class="login-container">
+    <div class="login-header">
+      <h1 title="login">Login</h1>
+    </div>
+    <div class="login-form">
+      <form method="post" action="/login">
+        <input name="username" type="text" placeholder="Username" required/>
+        <input name="password" type="password" placeholder="Password" required/>
+        <br />
+        <br />
+        <div classs="button_panel">
+          <button id="login" class="login_button" type="submit" >Login </button>
+          <button id="signup" type="button" class="signup_button" >Signup</button>
         </div>
-        <div class="login-form">
-          <form method="post" action="/login">
-            <input name="username" type="text" placeholder="Username" required/>
-            <input name="password" type="password" placeholder="Password" required/>
-            <br /><br />
-            <input class="btn" type="submit" value="Login" />
-            <br /><br />
-            <a href="/signup" title="sign up">Sign up</a>
-          </form>
-        </div>
-      </div>
+      </form>
+    </div>
+  </div>
 </body>
 
 </html>

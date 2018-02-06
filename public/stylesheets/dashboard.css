@@ -1,0 +1,112 @@
+/* Set a style for all buttons */
+
+body {
+  background-color: rgb(24, 161, 207);
+  font: medium 100
+}
+
+p {
+  text-align: right
+}
+
+h1, h2 {
+  text-align: center;
+  color: white;
+}
+
+.top_panel {
+  position: relative;
+  background-color: #76a05b;
+  width: 100%;
+  padding: 10px
+}
+
+.logout_button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  background-color: purple;
+  color: rgb(255, 247, 254);
+  padding: 10px;
+  border: none
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.content {
+  background-color: #8d48487a;
+  margin: 5% auto 15% auto;
+  /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
+
+.todo_form ,input[type="text"]{
+  /* position: absolute; */
+  /* width: 100%; */
+  background-color: rgba(255, 255, 255, 0.11);
+  color:black;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+select {
+  /* background: #45a049; */
+  /* width: 300px; */
+  padding: 10px;
+  /* margin: 8px 0; */
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  /* box-sizing: border-box; */
+}
+
+.todo_add_button{
+  /* width: 100%; */
+  background-color: #4CAF50;
+  color: white;
+  display: inline-block;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todo_form.input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+* {
+  box-sizing: border-box
+}
+
+*/
+/* Add padding to container elements */
+
+/* The Modal (background) */
+
+/* Modal Content/Box */
+
+/* Style the horizontal ruler */
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+
+@media screen and (max-width: 300px) {
+  .logout_button, .todo_add_button {
+    width: 100%;
+  }
+}

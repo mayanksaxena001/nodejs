@@ -7,58 +7,56 @@
   <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
   <script type='text/javascript' src='/js/dashboard.js'>
   </script>
-  <link rel="stylesheet" type="text/css" href="/stylesheets/signup.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 
 <body>
-  <h1>Welcome {{username}}!!</h1>
-  <p> Node and Express be with you.</p>
-  <div id='logout'>
-      <button type="submit" value="Logout" />
+  <div id='logout' class="top_panel">
+    <h1>Welcome {{username}}!!</h1>
+    <p> May Node and Express be with you.</p>
+    <input class="logout_button" type="button" value="Logout" />
   </div>
-  <div id="todo_form">
-    <form action="/api/todo" method="POST">
-      <button type="text" placeholder="Description" name="description">
-        <select name="status">
-          <option value="incomplete">Incomplete</option>
-          <option value="complete">Complete</option>
-          <option value="pending">Pending</option>
-        </select>
-      <input type="date" placeholder="Last Date" name="last_date" >
-      <button type="submit">Submit</button>
+  <div class="content" id="form">
+    <form class="todo_form" action="/api/todo" method="POST">
+      <input type="text" placeholder="Description" name="description" required/>
+      <select name="status">
+        <option value="incomplete">Incomplete</option>
+        <option value="complete">Complete</option>
+        <option value="pending">Pending</option>
+      </select>
+      <input type="date" placeholder="Last Date" name="last_date" required/>
+      <input class="todo_add_button" type="submit" value="Add me too." />
     </form>
-  </div>
-  <div>
     <h2>Todo List</h2>
-  </div>
-  <div id="todo_table">
-    <table class="table">
-      <tr>
-        <th>Description</th>
-        <th>Status</th>
-        <th>Last Date</th>
-        <th>Created Date</th>
-        <th>Last Updated</th>
-        <th>Delete</th>
-      </tr>
-      {{#each data}}
-      <tr>
-        <td>{{this.description}}</td>
-        <td>{{this.status}}</td>
-        <td>{{this.last_date}}</td>
-        <td>{{this.created_at}}</td>
-        <td>{{this.updated_at}}</td>
-        <td>
+    <div id="todo_table" class="todo_table">
+      <table class="table">
+        <tr>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Last Date</th>
+          <th>Created Date</th>
+          <th>Last Updated</th>
+          <th>Delete</th>
+        </tr>
+        {{#each data}}
+        <tr>
+          <td>{{this.description}}</td>
+          <td>{{this.status}}</td>
+          <td>{{this.last_date}}</td>
+          <td>{{this.created_at}}</td>
+          <td>{{this.updated_at}}</td>
+          <td>
             <form action="/api/todo/user/{{this.id}}" method="GET">
               <input type="submit" name="delete" value="Delete" />
             </form>
-          <!-- <input type="button" value="Delete" formmethod="DELETE" action="/api/todo/{{this.id}}"/> -->
-          <!-- <a href="/api/todo/{{this.id}}">delete</a> -->
-        </td>
-        {{/each}}
-      </tr>
-    </table>
+            <!-- <input type="button" value="Delete" formmethod="DELETE" action="/api/todo/{{this.id}}"/> -->
+            <!-- <a href="/api/todo/{{this.id}}">delete</a> -->
+          </td>
+          {{/each}}
+        </tr>
+      </table>
+    </div>
   </div>
 </body>
 
