@@ -19,6 +19,7 @@
     "nodemon": "^1.14.11"
   },
   "dependencies": {
+    "@google-cloud/storage": "^2.3.1",
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.5.1",
     "dotenv": "^4.0.0",
