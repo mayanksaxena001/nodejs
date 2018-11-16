@@ -38,5 +38,9 @@
     "server": "nodemon server.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node --presets es2015 server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mayanksaxena001/nodejs.git"
   }
 }
