@@ -13,9 +13,9 @@ export default class SignupController {
             successRedirect: '/dashboard',
             failureRedirect: '/logout',
         }, (err, user, callback) => {
-            if (err) {
-                res.status(405).send(err);
-            }
+            // app.use('/login', Login.router);(err)=> {
+            //     res.status(405).send(err);
+            // }
             if (user) {
                 req.login(user, (err, next) => {
                     if (err) return next(err);
