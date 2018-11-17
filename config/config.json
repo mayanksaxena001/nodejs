@@ -2,9 +2,9 @@
     "development": {
         "database": {
             "username": "root",
-            "password": "root",
+            "password": "perseus",
             "database":"todo_db",
-            "host" : "localhost",
+            "host" : "104.199.188.35",
             "port": 3306,
             "dialect": "mysql",
             "pool": {
