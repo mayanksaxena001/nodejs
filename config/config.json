@@ -1,10 +1,10 @@
 {
     "development": {
         "database": {
-            "username": "root",
-            "password": "perseus",
+            "username": "perseus",
+            "password": "perseus123",
             "database":"todo_db",
-            "host" : "104.199.188.35",
+            "host" : "nodejs-db.cdhmbaj05trt.ap-south-1.rds.amazonaws.com",
             "port": 3306,
             "dialect": "mysql",
             "pool": {
@@ -12,11 +12,10 @@
                 "min": 0,
                 "acquire": 30000,
                 "idle": 10000
-            },
-            "sockePath"     : "/cloudsql/banded-earth-202209:asia-east1:todo-db"
+            }
         },
         "host": "localhost",
-        "port": 8001
+        "port": 9000
     },
     "production": {
         "database": {

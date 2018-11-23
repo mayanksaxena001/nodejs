@@ -3,10 +3,10 @@ $(function () {
         e.preventDefault();
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:8001/signup',
+            url: 'http://localhost:9000/signup',
             success: function (data) {
                 console.log('success');
-                window.location = "http://localhost:8001/signup";
+                window.location = "http://localhost:9000/signup";
             }
         });
     });
